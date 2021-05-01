@@ -6,4 +6,5 @@
 sudo apt-get update
 sudo apt install -y git ansible 
 
-source scripts/clone-repo.sh
+git clone https://github.com/doobie1/ansible-budgie-client.git
+
