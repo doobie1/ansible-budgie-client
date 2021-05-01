@@ -11,7 +11,8 @@
 
 - name: Set user shell to zsh.
   user:
-    name: "{{ omz_user.name }}"
+    name: "{{ omz_user }}"
+    shell: "{{ omz_zsh_installed_path.stdout }}"
 
 - name: Install oh-my-zsh
   command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
