@@ -20,5 +20,5 @@ done
 git clone $GITREPO
 cd ansible-budgie-client
 
-ansible-playbook -i inventory playbook.yml
+ansible-playbook -v -i inventory playbook.yml
 

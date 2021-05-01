@@ -14,5 +14,5 @@
   when: not stat_result.stat.exists
 
 - name: Fetch new changes
-  command: yadm fetch
+  command: yadm pull
   when: stat_result.stat.exists
