@@ -15,8 +15,13 @@
     name: "{{ omz_user }}"
     shell: "{{ omz_zsh_installed_path.stdout }}"
 
-- name: Install oh-my-zsh
-  shell: sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-  args:
-    warn: no  
-  
+- name: Check if .oh-my-zsh exists
+  stat:
+    path: ~/.oh-my-zsh
+  register: stat_oh_my_zsh_result
+
+- name: Cloning oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
+  when: not stat_oh_my_zsh_result.stat.exists
