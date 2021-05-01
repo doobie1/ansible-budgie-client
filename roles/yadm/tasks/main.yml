@@ -6,7 +6,7 @@
 
 - name: Check if .config/yadm/repo.git/ exists
   stat:
-    path: "/.config/yadm/repo.git/"
+    path: "~/.config/yadm/repo.git/"
   register: stat_result
 
 - name: Clone and bootstrap
