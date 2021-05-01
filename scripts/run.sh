@@ -3,8 +3,21 @@
 ## ------------------------
 ## Install Dependencies Required for this script
 
-sudo apt-get update
-sudo apt install -y git ansible 
 
-git clone https://github.com/doobie1/ansible-budgie-client.git
+PACKAGES=(git ansible)
+GITREPO="https://github.com/doobie1/ansible-budgie-client.git"
+
+sudo apt-get update
+
+for i in "${PACKAGES[@]}"
+do
+    dpkg -s $i || {
+        sudo apt install $i
+    } 
+done
+
+git clone $GITREPO
+cd ansible-budgie-client
+
+ansible-playbook -i inventory playbook.yml
 
