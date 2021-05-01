@@ -3,3 +3,15 @@
   become: yes
   apt:
     name: "zsh"
+
+- name: Get zsh installed path.
+  shell: "command -v zsh"
+  register: omz_zsh_installed_path
+  changed_when: false
+
+- name: Set user shell to zsh.
+  user:
+    name: "{{ omz_user.name }}"
+
+- name: Install oh-my-zsh
+  command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
