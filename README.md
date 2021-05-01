@@ -5,6 +5,6 @@ build up my client
 
 ```console
 wget -qO- \
-https://github.com/iancleary/ansible-desktop/raw/main/run.sh | \
+https://raw.githubusercontent.com/doobie1/ansible-budgie-client/main/scripts/run.sh | \
 bash
 ```
