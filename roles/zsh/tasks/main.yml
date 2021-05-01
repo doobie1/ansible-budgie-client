@@ -12,6 +12,8 @@
 - name: Set user shell to zsh.
   user:
     name: "{{ omz_user }}"
+    become: true
+    become_method: sudo
     shell: "{{ omz_zsh_installed_path.stdout }}"
 
 - name: Install oh-my-zsh
