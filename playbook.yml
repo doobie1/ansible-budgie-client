@@ -2,11 +2,5 @@
 - name: initialize machine
   hosts: localhost
   connection: local
-
-
-
-# install yadm
-
-# init .dotfiles
-
-#
+  roles:
+    - yadm
