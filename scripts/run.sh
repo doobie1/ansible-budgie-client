@@ -5,3 +5,5 @@
 
 sudo apt-get update
 sudo apt install -y git ansible 
+
+source scripts/clone-repo.sh
