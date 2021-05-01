@@ -1,1 +1,2 @@
-omz_user.name=vagrant
+---
+omz_user.name: "vagrant"
