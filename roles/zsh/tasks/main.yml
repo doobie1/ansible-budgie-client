@@ -6,8 +6,8 @@
 
 - name: Install fancy fonts for zsh
   become: yes
-    apt:
-      name: "fonts-powerline"
+  apt:
+    name: "fonts-powerline"
 
 - name: Get zsh installed path.
   shell: "command -v zsh"
