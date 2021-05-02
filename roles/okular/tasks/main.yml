@@ -1,0 +1,5 @@
+---
+- name: Install okular
+  become: yes
+  apt:
+    name: "okular"

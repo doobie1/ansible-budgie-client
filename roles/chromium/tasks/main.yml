@@ -1,0 +1,5 @@
+---
+- name: Install chromium
+  become: yes
+  apt:
+    name: "chromium-browser"
