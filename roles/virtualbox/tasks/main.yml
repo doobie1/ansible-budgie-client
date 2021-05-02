@@ -1,0 +1,5 @@
+---
+- name: Install kaffeine
+  become: yes
+  apt:
+    name: "virtualbox"
