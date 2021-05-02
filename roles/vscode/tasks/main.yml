@@ -6,11 +6,13 @@
   changed_when: false
 
 - name: Download ASC file
+  become: yes
   apt_key: 
     url: "{{ vscode_microsoft_asc_url }}"
     state: present
 
 - name: Add vscode repo into sources list
+  become: yes
   apt_repository:
     repo: "{{ vscode_apt_repo }}"
     state: present
