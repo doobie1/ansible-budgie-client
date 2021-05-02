@@ -1,5 +1,0 @@
----
-- name: Install kaffeine
-  become: yes
-  apt:
-    name: "kaffeine"

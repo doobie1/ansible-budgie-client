@@ -1,10 +1,11 @@
 ---
 - name: Add strawberry repository from PPA and install its signing key on Ubuntu target
+  become: yes
   apt_repository:
     repo: ppa:jonaski/strawberry
-    update_cache: yes
+  update_cache: yes
 
-- name: Install kaffeine
+- name: Install strawberry
   become: yes
   apt:
     name: "strawberry"

@@ -5,6 +5,5 @@
   roles:
     - yadm
     - zsh
-    - kaffeine
     - virtualbox
     - strawberry
