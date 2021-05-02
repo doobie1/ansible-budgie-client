@@ -1,0 +1,22 @@
+---
+- name: Update apt cache
+  become: yes
+  apt:
+    update_cache: yes
+  changed_when: false
+
+- name: Download ASC file
+  apt-key: 
+    url: "{{ vscode_microsoft_asc_url }}"
+    state: present
+
+- name: Add vscode repo into sources list
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    state: present
+
+- name: Install vscode
+  become: yes
+  apt:
+    name: "code"
+    state: present
