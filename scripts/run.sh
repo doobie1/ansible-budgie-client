@@ -11,9 +11,7 @@ sudo apt-get update
 
 for i in "${PACKAGES[@]}"
 do
-    echo $i
-    if ! dpkg-query -W -f='${Status}' $i | grep "ok installed"; then sudo apt install $i; fi
-
+    if ! dpkg-query -W -f='${Status}' $i | grep "ok installed"; then sudo apt install -y $i; fi
 done
 
 [ -d ansible-budgie-client ] && rm -rf ansible-budgie-client ] 
