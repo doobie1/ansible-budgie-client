@@ -6,13 +6,13 @@
   changed_when: false
 
 - name: Download ASC file
-  apt-key: 
+  apt_key: 
     url: "{{ vscode_microsoft_asc_url }}"
     state: present
 
 - name: Add vscode repo into sources list
   apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    repo: "{{ vscode_apt_repo }}"
     state: present
 
 - name: Install vscode
