@@ -10,7 +10,7 @@
     name: "fonts-powerline"
 
 - name: Get zsh installed path.
-  command: "command -v zsh"
+  command: "which zsh"
   register: omz_zsh_installed_path
   changed_when: false
 
