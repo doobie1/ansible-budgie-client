@@ -35,5 +35,5 @@
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh
     dest: ~/.oh-my-zsh
-    version: latest
+    version: HEAD
   when: not stat_oh_my_zsh_result.stat.exists
