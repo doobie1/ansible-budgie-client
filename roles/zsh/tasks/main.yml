@@ -1,21 +1,21 @@
 ---
 - name: Install zsh
-  become: yes
+  become: true
   apt:
     name: "zsh"
 
 - name: Install fancy fonts for zsh
-  become: yes
+  become: true
   apt:
     name: "fonts-powerline"
 
 - name: Get zsh installed path.
-  shell: "command -v zsh"
+  command: "command -v zsh"
   register: omz_zsh_installed_path
   changed_when: false
 
 - name: Set user shell to zsh.
-  become: yes
+  become: true
   user:
     name: "{{ omz_user }}"
     shell: "{{ omz_zsh_installed_path.stdout }}"
@@ -25,7 +25,7 @@
     path: ~/.zshrc
     regexp: "marc"
     replace: "{{ omz_user }}"
-  
+
 - name: Check if .oh-my-zsh exists
   stat:
     path: ~/.oh-my-zsh
@@ -35,4 +35,5 @@
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh
     dest: ~/.oh-my-zsh
+    version: latest
   when: not stat_oh_my_zsh_result.stat.exists

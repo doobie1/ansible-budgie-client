@@ -1,0 +1,6 @@
+---
+- name: Install chromium
+  become: true
+  apt:
+    name: "chromium-browser"
+    state: absent
