@@ -4,3 +4,15 @@
   apt:
     name: "chromium-browser"
     state: absent
+
+- name: Check if chrome is installed
+  command: dpkg-query -W google-chrome-stable
+  register: chrome_check_deb
+  failed_when: chrome_check_deb.rc > 1
+  changed_when: chrome_check_deb.rc == 1
+
+- name: Install Chrome
+  become: true
+  apt:
+    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+  when: chrome_check_deb.rc == 1
