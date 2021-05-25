@@ -1,11 +1,9 @@
 ---
 - name: Install zsh
-  become: true
   apt:
     name: "zsh"
 
 - name: Install fancy fonts for zsh
-  become: true
   apt:
     name: "fonts-powerline"
 
@@ -15,7 +13,6 @@
   changed_when: false
 
 - name: Set user shell to zsh.
-  become: true
   user:
     name: "{{ omz_user }}"
     shell: "{{ omz_zsh_installed_path.stdout }}"

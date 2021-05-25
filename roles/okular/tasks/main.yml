@@ -1,5 +1,4 @@
 ---
 - name: Install okular
-  become: true
   apt:
     name: "okular"

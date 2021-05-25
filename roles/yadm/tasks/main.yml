@@ -1,6 +1,5 @@
 ---
 - name: Install yadm
-  become: true
   apt:
     name: "yadm"
 

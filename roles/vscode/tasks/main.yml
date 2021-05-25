@@ -1,24 +1,20 @@
 ---
 - name: Update apt cache
-  become: true
   apt:
     update_cache: true
   changed_when: false
 
 - name: Download ASC file
-  become: true
   apt_key:
     url: "{{ vscode_microsoft_asc_url }}"
     state: present
 
 - name: Add vscode repo into sources list
-  become: true
   apt_repository:
     repo: "{{ vscode_apt_repo }}"
     state: present
 
 - name: Install vscode
-  become: true
   apt:
     name: "code"
     state: present

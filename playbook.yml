@@ -2,11 +2,13 @@
 - name: initialize machine
   hosts: localhost
   connection: local
+  become: true
   roles:
     - yadm
     - zsh
     - virtualbox
-    - strawberry
+    - media
     - vscode
     - okular
     - browser
+    - container
