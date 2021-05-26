@@ -1,2 +1,27 @@
 ---
-- name: Install docker
+ # install docker
+- name: Ensure that required tools for docker are present
+  apt:
+    pkg:
+    - curl
+    - apt-transport-https
+    - gnupg
+    - lsb-release
+    - ca-certificates
+
+- name: Add GPG Key of Docker Repo
+  apt_key:
+    key: https://download.docker.com/linux/ubuntu/gpg 
+    state: present
+
+- name: Add docker apt repo
+  apt_repository:
+    repo: 'deb https://download.docker.com/linux/ubuntu focal stable'
+    state: present
+
+- name: Update apt and install docker-ce
+  apt: 
+    name: docker-ce
+    update_cache: true
+    state: latest
+ # install minikube

@@ -6,7 +6,6 @@
     update_cache: true
 
 - name: Install strawberry
-  
   apt:
     name: "strawberry"
 
