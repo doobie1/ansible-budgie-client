@@ -11,7 +11,7 @@
 
 - name: Add GPG Key of Docker Repo
   apt_key:
-    key: https://download.docker.com/linux/ubuntu/gpg 
+    url: https://download.docker.com/linux/ubuntu/gpg 
     state: present
 
 - name: Add docker apt repo
@@ -24,4 +24,5 @@
     name: docker-ce
     update_cache: true
     state: latest
+
  # install minikube

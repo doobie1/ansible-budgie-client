@@ -1,0 +1,8 @@
+---
+- name: Install okular
+  apt:
+    name: "okular"
+
+- name: Install ghostwriter
+  apt:
+    name: "ghostwriter"

@@ -1,0 +1,9 @@
+---
+- name: Download deb package of citrix workspace app
+  get_url:
+    url: https://downloads.citrix.com/19434/icaclient_21.4.0.11_amd64.deb?__gda__=1622062181_73323ff61e3e908507260cbfe564336f
+    dest: ./download/icaclient_21.4.0.11_amd64.deb
+
+- name: Install citrix workspace app
+  apt:
+    deb: ./download/icaclient_21.4.0.11_amd64.deb
