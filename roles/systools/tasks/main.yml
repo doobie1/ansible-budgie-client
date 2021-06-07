@@ -1,0 +1,21 @@
+---
+- name: Add apt repo of tlp (https://github.com/linrunner/TLP)
+  apt_repository:
+    repo: ppa:linrunner/tlp
+    update_cache: true
+
+- name: Install tlp
+  apt:
+    name: tlp
+
+- name: Install acpi_call kernel module
+  apt:
+    name: acpi-call-dkms
+
+- name: Install htop
+  apt:
+    name: htop
+
+- name: Install tmux
+  apt:
+    name: tmux
