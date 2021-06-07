@@ -1,8 +1,7 @@
 ---
-- name: Install okular
+- name: Install all doc-tools
   apt:
-    name: "okular"
+    pkg:
+      - okular
+      - ghostwriter
 
-- name: Install ghostwriter
-  apt:
-    name: "ghostwriter"
